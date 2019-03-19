@@ -17,6 +17,7 @@ In this hands-on workshop you will learn the basics of Kubernetes.
 * [Lab 11 - Blue / green deployments](lab-11)
 * [Lab 12 - Liveness / readiness probes](lab-12)
 * [Lab 13 - Node labeling](lab-13)
+* [Lab 14 - Dashboard](lab-14)
 * [Lab XX - Clean up](lab-XX)
 
 ## People
