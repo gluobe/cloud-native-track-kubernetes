@@ -7,13 +7,6 @@ Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a
 single-node Kubernetes cluster inside a VM on your laptop for users looking to 
 try out Kubernetes or develop with it day-to-day.
 
-## Task 0: Installing VirtualBox
-
-By default `minikube` uses `VirtualBox` to run its VM.  To install VirtualBox 
-download the latest [https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-OSX.dmg](package) 
-and install it.
-
-
 ## Task 1: Installing minikube
 
 The easiest way to install minikube is with [https://brew.sh/](homebrew). The 
@@ -36,10 +29,12 @@ minikube version: v0.35.0
 
 ## Task 3: Running minikube
 
-To start minikube run the following command (it might take a couple of minutes 
+To start minikube run the `minikube start` command (it might take a couple of minutes 
 before minikube has started):
 
 ```
+minikube start
+
 😄  minikube v0.35.0 on darwin (amd64)
 💡  Tip: Use 'minikube start -p <name>' to create a new cluster, or 'minikube delete' to delete this one.
 🏃  Re-using the currently running virtualbox VM for "minikube" ...
