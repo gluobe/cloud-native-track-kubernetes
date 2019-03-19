@@ -36,10 +36,12 @@ minikube version: v0.35.0
 
 ## Task 3: Running minikube
 
-To start minikube run the following command (it might take a couple of minutes 
+To start minikube run the `minikube start` command (it might take a couple of minutes 
 before minikube has started):
 
 ```
+minikube start
+
 😄  minikube v0.35.0 on darwin (amd64)
 💡  Tip: Use 'minikube start -p <name>' to create a new cluster, or 'minikube delete' to delete this one.
 🏃  Re-using the currently running virtualbox VM for "minikube" ...
