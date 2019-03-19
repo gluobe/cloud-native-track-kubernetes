@@ -13,7 +13,7 @@ In this hands-on workshop you will learn the basics of Kubernetes.
 * [Lab 07 - Services](lab-07)
 * [Lab 08 - Config Maps & Secrets](lab-08)
 * [Lab 09 - Persistent Volumes](lab-09)
-* [Lab 10 - Lists (optional))](lab-10)
+* [Lab 10 - Lists](lab-10)
 * [Lab 11 - Blue / green deployments](lab-11)
 * [Lab 12 - Liveness / readiness probes](lab-12)
 * [Lab 13 - Node labeling](lab-13)
