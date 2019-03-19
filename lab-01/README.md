@@ -63,6 +63,8 @@ minikube start
 To verify that minikube is running correctly run the `minikube status` command:
 
 ```
+minikube status
+
 host: Running
 kubelet: Running
 apiserver: Running
