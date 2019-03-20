@@ -1,4 +1,4 @@
-# Container Native Track - Kubernetes Workshop
+# Cloud Native Track - Kubernetes Workshop
 
 In this hands-on workshop you will learn the basics of Kubernetes.
 
