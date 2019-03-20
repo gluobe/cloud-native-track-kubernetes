@@ -270,7 +270,7 @@ namespace "lab-09" deleted
 To delete the persistent volume object (this will not delete any data!):
 
 ```
-kubectl delete lab-09-pv.yml
+kubectl delete -f lab-09-pv.yml
 ```
 
 To delete the actual data:
