@@ -164,7 +164,7 @@ Now visit your application again, this time you should see that the color has
 changed to yellow:
 
 ```
-minikube service my-container-info-service -n lab-08
+minikube service container-info -n lab-08
 ```
 
 ## Task 4 : Create a secret from literal
