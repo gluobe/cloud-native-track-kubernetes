@@ -132,6 +132,7 @@ spec:
             operator: In
             values:
             - test
+        topologyKey: failure-domain.beta.kubernetes.io/zone
   containers:
   - name: container-info
     image: gluobe/container-info:blue
@@ -163,6 +164,7 @@ spec:
             operator: In
             values:
             - test
+        topologyKey: failure-domain.beta.kubernetes.io/zone
   containers:
   - name: container-info
     image: gluobe/container-info:blue
