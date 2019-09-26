@@ -7,6 +7,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-12
 
+---
+
 namespace "lab-12" created
 ```
 
@@ -47,6 +49,8 @@ Apply the file in your namespace to create the `probe-readiness` pod.
 ```
 kubectl apply -f lab-12-probe-readiness.yml -n lab-12
 
+---
+
 pod "probe-readiness" created
 ```
 
@@ -54,6 +58,8 @@ Now we need to check the state of the pod.
 
 ```
 kubectl get pods -n lab-12
+
+---
 
 NAME              READY   STATUS    RESTARTS   AGE
 probe-readiness   0/1     Running   0          10s
@@ -86,6 +92,8 @@ Apply the file and check out the service.
 ```
 kubectl apply -f lab-12-probes-service.yml -n lab-12
 
+---
+
 service "probes-service" created
 ```
 
@@ -95,6 +103,8 @@ ready state.
 
 ```
 kubectl describe service probes-service -n lab-12
+
+---
 
 Name:                     probes-service
 Namespace:                lab-10
@@ -125,6 +135,8 @@ Now you will see that the pod is ready.
 ```
 kubectl get pods -n lab-12
 
+---
+
 NAME              READY   STATUS    RESTARTS   AGE
 probe-readiness   1/1     Running   0          2m39s
 ```
@@ -134,6 +146,8 @@ appeared.
 
 ```
 kubectl describe service probes-service -n lab-12
+
+---
 
 Name:                     probes-service
 Namespace:                lab-10
@@ -156,11 +170,15 @@ Delete the pod and service created in this task:
 ```
 kubectl delete -f lab-12-probe-readiness.yml -n lab-12
 
+---
+
 pod "probe-readiness" deleted
 ```
 
 ```
 kubectl delete -f lab-12-probes-service.yml -n lab-12
+
+---
 
 service "probes-service" deleted
 ```
@@ -207,6 +225,8 @@ Apply the file in your namespace to create the `probe-liveness` pod.
 ```
 kubectl apply -f lab-12-probe-liveness.yml -n lab-12
 
+---
+
 pod/probe-liveness created
 ```
 
@@ -214,6 +234,8 @@ Now we need to check the state of the pod.
 
 ```
 kubectl get pods -n lab-12
+
+---
 
 NAME             READY   STATUS    RESTARTS   AGE
 probe-liveness   1/1     Running   0          10s
@@ -243,6 +265,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-12
+
+---
 
 namespace "lab-12" deleted
 ```

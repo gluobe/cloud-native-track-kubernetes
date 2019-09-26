@@ -7,6 +7,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-08
 
+---
+
 namespace "lab-08" created
 ```
 
@@ -35,11 +37,16 @@ Verify that the configmap has been created succesfully:
 ```
 kubectl get configmap container-info-env -n lab-08
 
+---
+
 NAME                 DATA      AGE
 container-info-env   1         59s
+```
 
-
+```
 kubectl describe configmap container-info-env -n lab-08
+
+---
 
 Name:		container-info-env
 Namespace:	lab-08
@@ -93,6 +100,8 @@ Now we create the new deployment with our environment variables.
 ```
 kubectl apply -f lab-08-deployment.yml -n lab-08
 
+---
+
 deployment "container-info" created
 ```
 
@@ -100,6 +109,8 @@ We will expose the service again.
 
 ```
 kubectl expose deployment container-info --type=NodePort --name=container-info -n lab-08
+
+---
 
 service "container-info" exposed
 ```
@@ -122,6 +133,8 @@ succesful):
 ```
 kubectl edit configmap container-info-env -n lab-08
 
+---
+
 configmap "container-info-env" edited
 ```
 
@@ -140,6 +153,8 @@ First list (and copy) the name of the pod:
 
 ```
 kubectl get pods -n lab-08
+
+---
 
 NAME                              READY     STATUS    RESTARTS   AGE
 container-info-84dc4f8678-bbcbp   1/1       Running   0          18m
@@ -177,6 +192,8 @@ If you want to create a secret from `literal` it looks like this.
 ```
 kubectl create secret generic lab-08-secret-literal --from-literal=password=N0T$oS3cREtP@SSw0rD -n lab-08
 
+---
+
 secret "lab-08-secret-literal" created
 ```
 
@@ -184,6 +201,8 @@ This secret can be listed by the command:
 
 ```
 kubectl get secret -n lab-08
+
+---
 
 NAME                    TYPE                                  DATA      AGE
 default-token-twfzc     kubernetes.io/service-account-token   3         8m
@@ -204,6 +223,8 @@ If this file is created we can use it to create the secret.
 ```
 kubectl create secret generic lab-08-secret-file --from-file=./password.txt -n lab-08
 
+---
+
 secret "lab-08-secret-file" created
 ```
 
@@ -211,6 +232,8 @@ Verify that you secret has been created succesfully:
 
 ```
 kubectl get secret -n lab-08
+
+---
 
 NAME                    TYPE                                  DATA      AGE
 default-token-7sszf     kubernetes.io/service-account-token   3         4m
@@ -253,6 +276,8 @@ this moment you are able to apply the yaml file and the secret will be created.
 ```
 kubectl create -f ./lab-08-secret-yaml.yml -n lab-08
 
+---
+
 secret "lab-08-secret-yaml" created
 ```
 
@@ -260,6 +285,8 @@ Verify that you secret has been created succesfully:
 
 ```
 kubectl get secret -n lab-08
+
+---
 
 NAME                    TYPE                                  DATA      AGE
 default-token-7sszf     kubernetes.io/service-account-token   3         11m
@@ -293,6 +320,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-08
+
+---
 
 namespace "lab-08" deleted
 ```

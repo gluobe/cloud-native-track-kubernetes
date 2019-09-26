@@ -7,6 +7,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-13
 
+---
+
 namespace "lab-13" created
 ```
 
@@ -27,6 +29,8 @@ First we need to find the name of the node.
 ```
 kubectl get nodes
 
+---
+
 NAME       STATUS    ROLES     AGE       VERSION
 minikube   Ready     master    2d        v1.13.3
 ```
@@ -36,6 +40,8 @@ Now you can add a label to the `minikube` node with the following command.
 ```
 kubectl label nodes minikube environment=test
 
+---
+
 node/minikube labeled
 ```
 
@@ -44,6 +50,8 @@ confirm that the node is labeled with the command.
 
 ```
 kubectl get nodes --show-labels
+
+---
 
 NAME       STATUS    ROLES     AGE       VERSION   LABELS
 minikube   Ready     master    2d        v1.13.3   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,environment=test,kubernetes.io/hostname=minikube,node-role.kubernetes.io/master=
@@ -92,6 +100,8 @@ And this will define that the deployment is going to run on this specific node.
 ```
 kubectl apply -f lab-13-label-deployment.yml -n lab-13
 
+---
+
 deployment.apps/container-info-blue created
 ```
 
@@ -99,6 +109,8 @@ You can verify on which node a pod is running using the following command:
 
 ```
 kubectl get pods -n lab-13 -o wide
+
+---
 
 NAME                                   READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
 container-info-blue-689dd4c865-4dhh6   1/1     Running   0          47s   172.17.0.5   minikube   <none>           <none>
@@ -180,6 +192,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-13
+
+---
 
 namespace "lab-13" deleted
 ```

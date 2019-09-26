@@ -12,6 +12,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-06
 
+---
+
 namespace "lab-06" created
 ```
 
@@ -48,6 +50,8 @@ Copy the above into a file `lab-06-deployment.yml` and `kubectl apply` it:
 ```
 kubectl apply -f lab-06-deployment.yml -n lab-06
 
+---
+
 deployment.apps/container-info created
 ```
 
@@ -57,6 +61,8 @@ instead of `pod/*` like we used in a previous lab):
 
 ```
 kubectl port-forward deployment/container-info 8080:80 -n lab-06
+
+---
 
 Forwarding from 127.0.0.1:8080 -> 80
 Forwarding from [::1]:8080 -> 80
@@ -79,6 +85,8 @@ Scaling your running application is as simple as:
 ```
 kubectl scale deployment container-info --replicas=3 -n lab-06
 
+---
+
 deployment.extensions "container-info" scaled
 ```
 
@@ -88,6 +96,8 @@ enough you will see them in the `Running` state already).
 
 ```
 kubectl get pods -n lab-06
+
+---
 
 NAME                              READY   STATUS    RESTARTS   AGE
 container-info-6d9747978f-5n6z9   1/1     Running   0          26m
@@ -106,6 +116,8 @@ being terminated:
 
 ```
 kubectl get pods -n lab-06
+
+---
 
 NAME                              READY   STATUS        RESTARTS   AGE
 container-info-6d9747978f-5n6z9   1/1     Running       0          27m
@@ -187,6 +199,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-06
+
+---
 
 namespace "lab-06" deleted
 ```

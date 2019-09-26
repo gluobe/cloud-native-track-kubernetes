@@ -7,6 +7,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-11
 
+---
+
 namespace "lab-11" created
 ```
 
@@ -53,6 +55,8 @@ select the correct deployment in the service we are creating in this task.
 ```
 kubectl apply -f lab-11-deployment-blue.yml -n lab-11
 
+---
+
 deployment.apps/container-info-blue created
 ```
 
@@ -79,6 +83,8 @@ the version of the deployment we are going to expose.
 
 ```
 kubectl apply -f lab-11-service-blue-green.yml -n lab-11
+
+---
 
 service/container-info created
 ```
@@ -127,6 +133,8 @@ as well. We are now deploying a `green` version.
 ```
 kubectl apply -f lab-11-deployment-green.yml -n lab-11
 
+---
+
 deployment.apps/container-info-green created
 ```
 
@@ -135,6 +143,8 @@ deployments.
 
 ```
 kubectl get deployment -n lab-11
+
+---
 
 NAME                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 container-info-blue    3         3         3            3           12m
@@ -170,6 +180,8 @@ set to `green` now.
 ```
 kubectl apply -f lab-11-service-blue-green.yml -n lab-11
 
+---
+
 service/container-info configured
 ```
 
@@ -185,6 +197,8 @@ We can now delete the blue deployment:
 ```
 kubectl delete -f lab-11-deployment-blue.yml -n lab-11
 
+---
+
 deployment.apps "container-info-blue" deleted
 ```
 
@@ -192,6 +206,8 @@ You now only have one deployment running, the `green`:
 
 ```
 kubectl get deployment -n lab-11
+
+---
 
 NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
 container-info-green   3/3     3            3           3m31s
@@ -206,6 +222,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-11
+
+---
 
 namespace "lab-11" deleted
 ```

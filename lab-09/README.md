@@ -15,6 +15,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-09
 
+---
+
 namespace "lab-09" created
 ```
 
@@ -88,6 +90,8 @@ like this.
 ```
 kubectl apply -f lab-09-pv.yml
 
+---
+
 persistentvolume "lab-09-volume" created
 ```
 
@@ -96,6 +100,8 @@ get command.
 
 ```
 kubectl get pv
+
+---
 
 NAME            CAPACITY   ACCESSMODES   RECLAIMPOLICY   STATUS      CLAIM     STORAGECLASS   REASON    AGE
 lab-09-volume   1Gi        ROX           Retain          Available             manual                   23s
@@ -126,6 +132,8 @@ And apply it with the following command.
 ```
 kubectl apply -f lab-09-pvc.yml -n lab-09
 
+---
+
 persistentvolumeclaim/lab-09-claim created
 ```
 
@@ -133,6 +141,8 @@ You can confirm that it is created with the following command.
 
 ```
 kubectl get pvc -n lab-09
+
+---
 
 NAME           STATUS   VOLUME          CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 lab-09-claim   Bound    lab-09-volume   1Gi        ROX            manual         28s
@@ -182,6 +192,8 @@ Apply the file with the kubectl command:
 ```
 kubectl create -f lab-09-deployment.yml -n lab-09
 
+---
+
 deployment.apps/meme-persistent created
 ```
 
@@ -189,6 +201,8 @@ Be sure that the pods are running.
 
 ```
 kubectl get pods -n lab-09
+
+---
 
 meme-persistent-84cdc97446-dc2v4   1/1     Running   0          31s
 meme-persistent-84cdc97446-dh59c   1/1     Running   0          31s
@@ -217,6 +231,8 @@ Apply the file:
 
 ```
 kubectl apply -f lab-09-service.yml -n lab-09
+
+---
 
 service/meme-persistent created
 ```
@@ -247,7 +263,7 @@ sudo su -
 Download an additional image:
 
 ```
-curl -so /mnt/data/images/kubernetes.jpeg https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png
+curl -so /mnt/data/images/kubernetes.jpeg https://raw.githubusercontent.com/gluobe/cloud-native-track-kubernetes/master/lab-09/images/kubernetes.png
 ```
 
 Refresh your browser to see the new image.
@@ -258,6 +274,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-09
+
+---
 
 namespace "lab-09" deleted
 ```

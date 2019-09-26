@@ -7,6 +7,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-10
 
+---
+
 namespace "lab-10" created
 ```
 
@@ -61,6 +63,8 @@ We can apply the entire list in one command.
 ```
 kubectl apply -f lab-10-list.yml -n lab-10
 
+---
+
 service/container-info created
 deployment.apps/container-info created
 ```
@@ -69,6 +73,8 @@ Now we can list all the resources we have created.
 
 ```
 kubectl get all -n lab-10
+
+---
 
 NAME                                  READY   STATUS    RESTARTS   AGE
 pod/container-info-56f64f4f8c-fxrtb   1/1     Running   0          30s
@@ -97,6 +103,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-10
+
+---
 
 namespace "lab-10" deleted
 ```

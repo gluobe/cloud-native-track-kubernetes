@@ -18,6 +18,8 @@ To see which namespaces are available use the `kubectl get namespaces` command:
 ```
 kubectl get namespaces
 
+---
+
 NAME          STATUS    AGE
 default       Active    40m
 kube-public   Active    40m
@@ -31,6 +33,8 @@ Creating a namespace is easy, `kubectl create namespace <namespacename>`:
 ```
 kubectl create namespace test
 
+---
+
 namespace "test" created
 ```
 
@@ -38,6 +42,8 @@ Check that your namespace has been created:
 
 ```
 kubectl get ns
+
+---
 
 NAME           STATUS    AGE
 default        Active    45m
@@ -61,6 +67,8 @@ This means that running the following command:
 ```
 kubectl get all
 
+---
+
 NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   21h
 ```
@@ -69,6 +77,8 @@ Is exactly the same as running:
 
 ```
 kubectl get all -n default
+
+---
 
 NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   21h
@@ -79,6 +89,8 @@ different result:
 
 ```
 kubectl get all -n kube-system
+
+---
 
 NAME                                   READY   STATUS    RESTARTS   AGE
 pod/coredns-86c58d9df4-gp858           1/1     Running   2          21h
@@ -126,7 +138,94 @@ kube-system   kube-scheduler-minikube            1/1     Running   2          21
 kube-system   storage-provisioner                1/1     Running   3          21h
 ```
 
-## Task 5: Deleting namespaces
+## Task 5: Chaning the default context
+
+As mentioned above, we can can change the behaviour that when no namespace is
+specified, the default namespace is assumed.  This is done by changing the
+context.
+
+Standard behaviour is that default namespace is automatically assumed, let us
+verify this first:
+
+```
+kubectl get all
+
+---
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   21h
+```
+
+Now change the "default" namespace to `kube-system`:
+
+```
+kubectl config set-context --current --namespace=kube-system
+
+---
+
+Context "minikube" modified.
+```
+
+If we now run `kubectl get all` without specifying a namespace we gat all the
+objects of the `kube-system` namespace:
+
+```
+kubectl get all
+
+---
+
+NAME                                        READY   STATUS    RESTARTS   AGE
+pod/coredns-fb8b8dccf-269qq                 1/1     Running   3          49d
+pod/coredns-fb8b8dccf-sd9qp                 1/1     Running   2          49d
+pod/etcd-minikube                           1/1     Running   1          49d
+pod/kube-addon-manager-minikube             1/1     Running   3          49d
+pod/kube-apiserver-minikube                 1/1     Running   2          49d
+pod/kube-controller-manager-minikube        1/1     Running   0          6m26s
+pod/kube-proxy-z92f5                        1/1     Running   1          49d
+pod/kube-scheduler-minikube                 1/1     Running   2          49d
+pod/kubernetes-dashboard-79dd6bfc48-rfwqb   1/1     Running   1          49d
+pod/storage-provisioner                     1/1     Running   2          49d
+
+
+NAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP   49d
+service/kubernetes-dashboard   ClusterIP   10.105.148.181   <none>        80/TCP                   49d
+
+NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/kube-proxy   1         1         1       1            1           <none>          49d
+
+NAME                                   READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/coredns                2/2     2            2           49d
+deployment.apps/kubernetes-dashboard   1/1     1            1           49d
+
+NAME                                              DESIRED   CURRENT   READY   AGE
+replicaset.apps/coredns-fb8b8dccf                 2         2         2       49d
+replicaset.apps/kubernetes-dashboard-79dd6bfc48   1         1         1       49d
+```
+
+Of course we can still get the objects from the default namespace by specifying
+it specifically:
+
+```
+kubectl get all -n default
+
+---
+
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   21h
+```
+
+Now change the context againg to its normal behavior:
+
+```
+kubectl config set-context --current --namespace=default
+
+---
+
+Context "minikube" modified.
+```
+
+## Task 6: Deleting namespaces
 
 Deleting a namespace is very easy, keep in mind however that when you delete a
 namespace *all* the objects in that namespace will be deleten. So always verify
@@ -134,6 +233,8 @@ that all the objects in that namespace can be deleted:
 
 ```
 kubectl delete ns test
+
+---
 
 namespace "test" deleted
 ```

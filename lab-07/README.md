@@ -17,6 +17,8 @@ Create a namespace for this lab:
 ```
 kubectl create ns lab-07
 
+---
+
 namespace "lab-07" created
 ```
 
@@ -54,6 +56,8 @@ Create the deployment using the above file:
 ```
 kubectl apply -f lab-07-deployment.yml -n lab-07
 
+---
+
 deployment "container-info" created
 ```
 
@@ -61,6 +65,8 @@ Verfiy that this is working:
 
 ```
 kubectl get pods -n lab-07
+
+---
 
 NAME                              READY     STATUS    RESTARTS   AGE
 container-info-5998b79944-gh57z   1/1       Running   0          21s
@@ -91,6 +97,8 @@ Create the service using the above file:
 ```
 kubectl apply -f lab-07-service.yml -n lab-07
 
+---
+
 service "container-info" created
 ```
 
@@ -98,6 +106,8 @@ Check that the service has been created succesfully:
 
 ```
 kubectl get service -n lab-07
+
+---
 
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 container-info   ClusterIP   10.27.247.106   <none>        80/TCP    7m
@@ -110,6 +120,8 @@ To see more information about the service we can, again, use the
 
 ```
 kubectl describe service container-info -n lab-07
+
+---
 
 Name:			container-info
 Namespace:		lab-07
@@ -171,6 +183,8 @@ Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-07
+
+---
 
 namespace "lab-07" deleted
 ```

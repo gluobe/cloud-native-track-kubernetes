@@ -79,5 +79,7 @@ your terminal and run the following command:
 ```
 kubectl delete ns lab-14
 
+---
+
 namespace "lab-14" deleted
 ```

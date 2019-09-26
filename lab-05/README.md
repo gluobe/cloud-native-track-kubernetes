@@ -32,6 +32,8 @@ commmand:
 ```
 kubectl apply -f lab-05-namespace.yml
 
+---
+
 namespace/lab-05 created
 ```
 
@@ -39,6 +41,8 @@ Check that the namespace has indeed been created:
 
 ```
 kubectl get namespaces
+
+---
 
 NAME          STATUS   AGE
 default       Active   22h
@@ -55,6 +59,8 @@ YAML file at your disposal:
 ```
 kubectl delete -f lab-05-namespace.yml
 
+---
+
 namespace "lab-05" deleted
 ```
 
@@ -69,13 +75,15 @@ directory (for example: `kubectl apply -f directory_full_of_yaml/`)
 ## Task 4: YAML and namespaces
 
 When working with YAML you can use namespaces in different ways:
-* metadata in YAML
-* option on the command line
+* as metadata in YAML
+* as an option provided on the command line
 
 As we deleted the namespace in a previous task we first need to recreate it:
 
 ```
 kubectl apply -f lab-05-namespace.yml
+
+---
 
 namespace/lab-05 created
 ```
@@ -94,10 +102,15 @@ spec:
     image: nginx
 ```
 
+Notice the `namespace: lab-05` line in the metadata section.  This will force
+the pod to be created inside the `lab-05` namespace.
+
 Save the above content into `lab-05-pod-metadata-ns.yml` and apply it:
 
 ```
 kubectl apply -f lab-05-pod-metadata-ns.yml
+
+---
 
 pod/nginx created
 ```
@@ -120,6 +133,8 @@ Save the above content into `lab-05-pod.yml` and apply it:
 ```
 kubectl apply -f lab-05-pod.yml -n lab-05
 
+---
+
 pod/nginx unchanged
 ```
 
@@ -127,12 +142,28 @@ pod/nginx unchanged
 
 Both options have their specific use-cases.
 
+As some of you might wonder what happens when you both specify a namespace
+inside the metadata as well as on the command line, so let us give this a try:
+
+```
+kubectl apply -f lab-05-pod.yml -n default
+
+---
+
+error: the namespace from the provided object "lab-05" does not match the namespace "default". You must pass '--namespace=lab-05' to perform this operation.
+```
+
+As you can see, Kubernetes will not allow you to override the namespace that is
+set in the yaml code.
+
 ## Task 5: Cleaning up
 
 Clean up the namespace for this lab:
 
 ```
 kubectl delete ns lab-05
+
+---
 
 namespace "lab-05" deleted
 ```

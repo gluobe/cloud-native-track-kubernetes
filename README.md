@@ -18,6 +18,8 @@ In this hands-on workshop you will learn the basics of Kubernetes.
 * [Lab 12 - Liveness / readiness probes](lab-12)
 * [Lab 13 - Node labeling](lab-13)
 * [Lab 14 - Dashboard](lab-14)
+* [Lab 15 - Resource limiting](lab-15)
+* [Lab 16 - Jobs / Cronjobs](lab-16)
 * [Lab XX - Clean up](lab-XX)
 
 ## People

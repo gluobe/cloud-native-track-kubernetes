@@ -12,3 +12,9 @@ Once `minikube` is stopped, you can delete the instance:
 ```
 minikube delete
 ```
+
+Uninstall minikube entirely:
+
+```
+brew cask uninstall minikube
+```
