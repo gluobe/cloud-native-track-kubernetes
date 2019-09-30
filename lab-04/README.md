@@ -43,7 +43,7 @@ pod "nginx" created
 ```
 
 The above command will create a single pod that is based on the official nginx
-Docker image.  Run the following command to verify that the pods has been
+Docker image.  Run the following command to verify that the pod has been
 created and is in the running state (if the pod is not yet in the running state
 wait a couple of seconds and try to run the command again):
 

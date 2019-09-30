@@ -95,7 +95,7 @@ kubectl apply -f lab-09-pv.yml
 persistentvolume "lab-09-volume" created
 ```
 
-At this point the persistent volume is created. Be sure that it its by using the
+At this point the persistent volume is created. Be sure that it is by using the
 get command.
 
 ```

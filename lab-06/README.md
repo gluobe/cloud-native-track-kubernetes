@@ -90,7 +90,7 @@ kubectl scale deployment container-info --replicas=3 -n lab-06
 deployment.extensions "container-info" scaled
 ```
 
-When you do a `kubectl get pods -n lab-06` quicily enough you will see that 
+When you do a `kubectl get pods -n lab-06` quickly enough you will see that 
 there are 2 additional container-info pods being started (if you are not fast 
 enough you will see them in the `Running` state already).
 
@@ -142,7 +142,7 @@ kubectl expose deployment container-info --type=NodePort --name=container-info -
 ```
 
 Our service is exposed now. Let's go find the port where it is running on. We
-will be able to open te service in your default browser with the following 
+will be able to open the service in your default browser with the following 
 command.
 
 ```

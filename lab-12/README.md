@@ -17,7 +17,7 @@ namespace "lab-12" created
 To test the readiness of a pod we are going to create the following file. Name 
 the file `lab-12-probe-readiness.yml` and fill with the content below.
 
-Pay special attention the the`readinessProbe` section.  This is the check that 
+Pay special attention to the`readinessProbe` section.  This is the check that 
 Kubernetes will perform continuously to see if a pod is ready or not.
 
 ```

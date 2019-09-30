@@ -74,7 +74,7 @@ container-info-5998b79944-t4h6n   1/1       Running   0          21s
 container-info-5998b79944-vkmcg   1/1       Running   0          21s
 ```
 
-Now reate a file `lab-07-service.yml` with the YAML for the service using the
+Now create a file `lab-07-service.yml` with the YAML for the service using the
 content below:
 
 ```
@@ -110,7 +110,7 @@ kubectl get service -n lab-07
 ---
 
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-container-info   ClusterIP   10.27.247.106   <none>        80/TCP    7m
+container-info   NodePort    10.27.247.106   <none>        80/TCP    7m
 ```
 
 ## Task 2: Inspecting your first service

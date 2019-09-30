@@ -127,7 +127,7 @@ Configmaps make it possible to change configuration of a application (pod),
 without needing to completely rebuild a Docker image.  Let's try this.
 
 Issue the following command, and replace the image color to `yellow` and save 
-the  file (you we get a `configmap "container-info-env" edited` message when 
+the  file (you will get a `configmap "container-info-env" edited` message when 
 succesful):
 
 ```
@@ -145,7 +145,7 @@ minikube service container-info -n lab-08
 ```
 
 You should notice that the color has NOT changed... Do not worry, this is 
-expecte behaviour. Before we see the change we need to restart the pod, for ease 
+expected behaviour. Before we see the change we need to restart the pod, for ease 
 of use we  will do this by simply deleting the pod (Kubernetes we start a new 
 one automatically).
 
@@ -244,7 +244,7 @@ lab-08-secret-literal   Opaque                                1         1m
 ## Task 6: Creating a secret from YAML
 
 Our last option we have is to create the secret directly from a yaml. This is 
-similar to how we create services, deployments,... and andy other Kubernetes 
+similar to how we create services, deployments,... and any other Kubernetes 
 objects we already created in these labs.  First we need to encrypt our 
 password.
 
@@ -307,7 +307,7 @@ You will see the encoded password in the YAML. This can be decoded using the
 following command.
 
 ```
-echo 'TjBUJG9TM2NSRXRQQFNTdzByRA===' | base64 --decode
+echo 'TjBUJG9TM2NSRXRQQFNTdzByRA==' | base64 --decode
 ```
 
 This will output : `N0T$oS3cREtP@SSw0rD`

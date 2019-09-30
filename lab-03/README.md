@@ -138,7 +138,7 @@ kube-system   kube-scheduler-minikube            1/1     Running   2          21
 kube-system   storage-provisioner                1/1     Running   3          21h
 ```
 
-## Task 5: Chaning the default context
+## Task 5: Changing the default context
 
 As mentioned above, we can can change the behaviour that when no namespace is
 specified, the default namespace is assumed.  This is done by changing the
@@ -166,7 +166,7 @@ kubectl config set-context --current --namespace=kube-system
 Context "minikube" modified.
 ```
 
-If we now run `kubectl get all` without specifying a namespace we gat all the
+If we now run `kubectl get all` without specifying a namespace we get all the
 objects of the `kube-system` namespace:
 
 ```
@@ -215,7 +215,7 @@ NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
 service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   21h
 ```
 
-Now change the context againg to its normal behavior:
+Now change the context again to its normal behavior:
 
 ```
 kubectl config set-context --current --namespace=default
