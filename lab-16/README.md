@@ -31,7 +31,7 @@ namespace "lab-16" created
 Here is an example Job config. It computes π to 2000 places and prints it out. 
 It takes around 10s to complete.
 
-lab-16-job.yiml:
+lab-16-job.yml:
 
 ```
 apiVersion: batch/v1
@@ -49,7 +49,7 @@ spec:
   backoffLimit: 4
 ```
 
-Now let’s run `kubectl create -f job.yaml -n lab-16` to deploy the example.
+Now let’s run `kubectl create -f lab-16-job.yml -n lab-16` to deploy the example.
 
 ## Task 2: Check the status of the job
 
@@ -113,7 +113,7 @@ either. Keeping them around allows you to still view the logs of completed pods
 to check for errors, warnings, or other diagnostic output. The job object also 
 remains after it is completed so that you can view its status. It is up to the 
 user to delete old jobs after noting their status. Delete the job with kubectl 
-(e.g. kubectl delete jobs/pi or kubectl delete -f ./job.yaml). When you delete 
+(e.g. kubectl delete jobs/pi or kubectl delete -f ./lab-16-job.yml). When you delete 
 the job using kubectl, all the pods it created are deleted too.
 
 ## Cronjob
