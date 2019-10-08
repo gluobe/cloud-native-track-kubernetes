@@ -149,7 +149,7 @@ error. Edit the file from our limited pod into this file:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: container-info
+  name: container-info2
 spec:
   containers:
   - name: container-info
@@ -167,7 +167,7 @@ spec:
 ### Task 5: Apply this pod to the namespace:
 
 ```
-kubectl apply -f lab-15-limited-pod.yml -n lab-15`
+kubectl apply -f lab-15-limited-pod.yml -n lab-15
 
 ---
 
