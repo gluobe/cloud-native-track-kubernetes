@@ -146,7 +146,7 @@ As some of you might wonder what happens when you both specify a namespace
 inside the metadata as well as on the command line, so let us give this a try:
 
 ```
-kubectl apply -f lab-05-pod.yml -n default
+kubectl apply -f lab-05-pod-metadata-ns.yml -n default
 
 ---
 
