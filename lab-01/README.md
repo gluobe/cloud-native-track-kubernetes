@@ -20,7 +20,7 @@ The easiest way to install Minikube is by using [homebrew](https://brew.sh/). Th
 following command will install Minikube.
 
 ```
-brew cask install minikube
+brew install minikube
 
 ---
 
