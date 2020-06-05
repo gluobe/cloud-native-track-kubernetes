@@ -107,7 +107,7 @@ kubectl describe service probes-service -n lab-12
 ---
 
 Name:                     probes-service
-Namespace:                lab-10
+Namespace:                lab-12
 Labels:                   <none>
 Annotations:              kubectl.kubernetes.io/last-applied-configuration={"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"probes-service","namespace":"lab-10"},"spec":{"ports":[{"port":80,"protocol":"...
 Selector:                 app=probes
