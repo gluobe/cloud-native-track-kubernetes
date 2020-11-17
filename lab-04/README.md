@@ -35,7 +35,7 @@ To run your first pod (the official nginx Docker image), run the following
 command:
 
 ```
-kubectl run --generator=run-pod/v1 --image=nginx nginx -n lab-04
+kubectl run --restart=Never --image=nginx  nginx -n lab-04
 
 ---
 
