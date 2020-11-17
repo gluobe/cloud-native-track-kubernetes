@@ -127,7 +127,7 @@ our pod will become ready and will be added as an endpoint of the service. Let's
 create the file inside our pod:
 
 ```
-kubectl exec probe-readiness touch /tmp/ready -n lab-12
+kubectl exec probe-readiness -n lab-12 -- touch /tmp/ready
 ```
 
 Now you will see that the pod is ready.
