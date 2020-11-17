@@ -10,7 +10,7 @@ try out Kubernetes or develop with it day-to-day.
 ## Task 0: Installing VirtualBox
 
 By default `Minikube` uses `VirtualBox` to run its VM.  To install VirtualBox 
-download the latest [package](https://download.virtualbox.org/virtualbox/6.0.12/VirtualBox-6.0.12-133076-OSX.dmg) 
+download the latest [package](https://download.virtualbox.org/virtualbox/6.1.16/VirtualBox-6.1.16-140961-OSX.dmg) 
 and install it.
 
 ## Task 1: Installing Minikube
