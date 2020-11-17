@@ -13,6 +13,8 @@ By default `Minikube` uses `VirtualBox` to run its VM.  To install VirtualBox
 download the latest [package](https://download.virtualbox.org/virtualbox/6.1.16/VirtualBox-6.1.16-140961-OSX.dmg) 
 and install it.
 
+During the installation of VirtualBox you will be prompted with an popup window stating `System Extention Blocked`.  If you however did not see that popup window and you VirtualBox is not installing correctly please visit [this website](https://clickontyler.com/support/a/86/how-to-install-virtualbox-on-recent-versions-of-macos/) to allow software from Oracle Inc to be installed.
+
 ## Task 1: Installing Minikube
 
 The easiest way to install Minikube is by using [homebrew](https://brew.sh/). The 
