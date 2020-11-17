@@ -82,7 +82,7 @@ To connect to your pod, you can use the following command (notice how it
 resembles the `docker exec` command in options and functionality):
 
 ```
-kubectl exec -ti nginx bash -n lab-04
+kubectl exec -ti nginx -n lab-04 -- bash
 
 ---
 
