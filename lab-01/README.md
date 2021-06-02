@@ -7,14 +7,6 @@ Minikube is a tool that makes it easy to run Kubernetes locally. Minikube runs a
 single-node Kubernetes cluster inside a VM on your laptop for users looking to 
 try out Kubernetes or develop with it day-to-day.
 
-## Task 0: Installing VirtualBox
-
-By default `Minikube` uses `VirtualBox` to run its VM.  To install VirtualBox 
-download the latest [package](https://download.virtualbox.org/virtualbox/6.1.16/VirtualBox-6.1.16-140961-OSX.dmg) 
-and install it.
-
-During the installation of VirtualBox you will be prompted with an popup window stating `System Extention Blocked`.  If you however did not see that popup window and you VirtualBox is not installing correctly please visit [this website](https://clickontyler.com/support/a/86/how-to-install-virtualbox-on-recent-versions-of-macos/) to allow software from Oracle Inc to be installed.
-
 ## Task 1: Installing Minikube
 
 The easiest way to install Minikube is by using [homebrew](https://brew.sh/). The 
@@ -85,8 +77,25 @@ minikube status
 
 ---
 
+minikube
+type: Control Plane
 host: Running
 kubelet: Running
 apiserver: Running
-kubectl: Correctly Configured: pointing to minikube-vm at 192.168.99.106
+kubeconfig: Configured
 ```
+
+## Task 5: Checking kubectl status
+
+To verify that `kubectl` has been configured correctly run the `kubectl get nodes` command:
+
+```
+kubectl get nodes
+
+---
+
+NAME       STATUS   ROLES    AGE    VERSION
+minikube   Ready    master   197d   v1.19.4
+```
+
+> NOTE: if you do not see the `minikube` node you are most likely connected to the wrong cluster
