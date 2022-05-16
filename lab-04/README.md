@@ -31,7 +31,7 @@ lab-04           Active    7s
 
 ## Task 2: Starting your first pod
 
-To run your first pod (the official nginx Docker image), run the following
+To run your first pod (the official nginx container image), run the following
 command:
 
 ```
@@ -43,7 +43,7 @@ pod "nginx" created
 ```
 
 The above command will create a single pod that is based on the official nginx
-Docker image.  Run the following command to verify that the pod has been
+container image.  Run the following command to verify that the pod has been
 created and is in the running state (if the pod is not yet in the running state
 wait a couple of seconds and try to run the command again):
 
@@ -79,7 +79,7 @@ If that works you can close the port-foward connection by pressing `CTRL+c`.
 ## Task 3: Connecting to your pod
 
 To connect to your pod, you can use the following command (notice how it
-resembles the `docker exec` command in options and functionality):
+resembles the `podman container exec` command in options and functionality):
 
 ```
 kubectl exec -ti nginx -n lab-04 -- bash
@@ -101,7 +101,7 @@ exit
 
 ## Task 4: Pod logs
 
-Again similar to when working with Docker containers, Kubernetes has a built-in
+Again similar to when working with Podman containers, Kubernetes has a built-in
 feature that exposes all stdout/stderr output into logs.  To access those logs
 issue the following command:
 

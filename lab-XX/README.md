@@ -16,5 +16,5 @@ minikube delete
 Uninstall minikube entirely:
 
 ```
-brew cask uninstall minikube
+brew uninstall minikube
 ```

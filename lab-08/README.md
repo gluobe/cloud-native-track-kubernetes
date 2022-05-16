@@ -124,7 +124,7 @@ minikube service container-info -n lab-08
 ## Task 3: Updating an existing configmap
 
 Configmaps make it possible to change configuration of a application (pod), 
-without needing to completely rebuild a Docker image.  Let's try this.
+without needing to completely rebuild a container image.  Let's try this.
 
 Issue the following command, and replace the image color to `yellow` and save 
 the  file (you will get a `configmap "container-info-env" edited` message when 
